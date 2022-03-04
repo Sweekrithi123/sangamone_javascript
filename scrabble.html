@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Scrabble Word</title>
+	<style type="text/css">
+		table{
+			font-family: arial;
+			border-collapse: separate;
+			width: 50%;
+			padding: px;
+		}
+		tr,td{
+			color: firebrick;
+			font-family: sans-serif;
+		}
+		th{
+			color: saddlebrown;
+			font-family: sans-serif;
+			font-size: 20px;
+			font-style: bold;
+		}
+		h1{
+			color: darkolivegreen;
+			font-size: 30px;
+		}
+		h3{
+			color: gold;
+			font-size: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Scrabble Score</h1>
+	<table border="1">
+		<tr>
+			<th>Letter</th>
+			<th>Value</th>
+		</tr>
+		<tr>
+			<td>A, E, I, O, U, L, N, R, S, T </td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>D,G</td>
+			<td>2</td>
+		</tr>
+		</tr>
+		<tr>
+			<td>B,C,M,P</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>F,H,V,W,Y</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>K</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>J,X</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>Q,Z </td>
+			<td>10</td>
+		</tr>
+	</table>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h3>Enter a word to find scrabble score</h3>
+			</div>
+			
+		
+		<div class="col1">
+			<input type="text" id="word" placeholder="enter a word">
+			<button onclick="calculate()">Calculate</button>
+	</div>
+	<div class="col2">
+		<span id="score">
+			<p id="score"></p>
+		</span>
+		
+	</div>
+	</div>
+	<script type="text/javascript">
+		function calculate(){
+			var total=0;
+			let x=document.getElementById('word').value;
+			let a=/[AEIOULNRSTaeioulnrst]/
+			let b=/[DGdg]/
+			let c=/[BCMPbcmp]/
+			let d=/[FHVWYfhvwy]/
+			let e=/[Kk]/
+			let f=/[JXjx]/
+			let g=/[QZqz]/
+			for(i=0;i<x.length;i++){
+				if(x[i].match(a)){
+					total=total+1;
+					document.write("1");
+				}
+				else if(x[i].match(b)){
+					total=total+2;
+					document.write("2");
+				}
+				else if(x[i].match(c)){
+					total=total+3;
+					document.write("3");
+				}
+				else if(x[i].match(d)){
+					total=total+4;
+					document.write("4");
+				}
+				else if(x[i].match(e)){
+					total=total+5;
+					document.write("5");
+				}
+				else if(x[i].match(f)){
+					total=total+8;
+					document.write("8");
+				}
+				else if(x[i].match(g)){
+					total=total+10;
+					document.write("10");
+				}
+			}
+			alert("total="+total);
+		}
+	</script>
+
+</body>
+</html>
